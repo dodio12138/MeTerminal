@@ -1,0 +1,64 @@
+
+@font-face {
+    font-family: 'nimbus_monoregular';
+    src: url('../font/nimbusmono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: 'nimbus_monoregular', monospace;
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+  }
+  
+  .terminal-container {
+    /* 样式同之前的示例 */
+    margin-top: 5%;
+    margin-left: 10%;
+    animation: crt-scan 5s infinite linear; /* 扫描线动画 */
+  }
+  
+  #terminal-output {
+    /* 样式同之前的示例 */
+    color: #4caf50;
+  }
+  
+  .input-container {
+    display: flex;
+    margin-top: 5px;
+  }
+  
+  .input-container span {
+    color: #4caf50;
+    margin-right: 5px;
+  }
+  
+  #terminal-input{
+    background-color: transparent;
+    font-size: x-large;
+    border: none; /* 隐藏边框 */
+    outline: none;
+    color: #4caf50;;
+    font-family: monospace;
+    flex: 0;
+    /* 隐藏输入框的外边框（包括获取焦点时的边框） */
+    border: 0px solid transparent;
+    outline: 0px solid transparent;
+  }
+
+  @keyframes crt-scan {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 -200%;
+    }
+  }
+  
+  
