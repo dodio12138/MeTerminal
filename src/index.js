@@ -82,6 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
               'Miscellaneous: Linux, Shell (Bash), LATEX(Overleaf), Markdown, Git, Microsoft Office, Blender, AfterEffect, Premiere, DaVinci, Photoshop, Illustrator, QGIS.',
               'Soft Skills: Time Management, Teamwork, Problem-solving, Documentation'
             ]
+        case 'portfolio':
+            return 'https://dodio12138.github.io'
         default:
           return 'Command not found. Type "help" to see available commands.';
       }
