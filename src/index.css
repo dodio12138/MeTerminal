@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'nimbus_monoregular';
-    src: url('../font/nimbusmono-regular-webfont.woff') format('woff');
+    src: url('../font/nimbusmono-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -14,7 +14,7 @@ body {
     font-family: 'nimbus_monoregular', monospace;
     margin: 0;
     padding: 0;
-    font-size: x-large;
+    font-size: large;
   }
   
   .terminal-container {
@@ -27,6 +27,7 @@ body {
   #terminal-output {
     /* 样式同之前的示例 */
     color: #4caf50;
+    font-family: 'nimbus_monoregular', monospace;
   }
   
   .input-container {
@@ -41,7 +42,7 @@ body {
   
   #terminal-input{
     background-color: transparent;
-    font-size: x-large;
+    font-size: large;
     border: none; /* 隐藏边框 */
     outline: none;
     color: #4caf50;;
@@ -50,6 +51,7 @@ body {
     /* 隐藏输入框的外边框（包括获取焦点时的边框） */
     border: 0px solid transparent;
     outline: 0px solid transparent;
+    font-family: 'nimbus_monoregular', monospace;
   }
 
   @keyframes crt-scan {

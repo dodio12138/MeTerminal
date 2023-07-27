@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function cmdClear(){
-        terminalOutput.textContent = ">> Clear Over! Please type.";
+        terminalOutput.textContent = ">> Clear Over! Please type." + '\n';
     }
   });
   
