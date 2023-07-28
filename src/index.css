@@ -219,6 +219,7 @@ body {
   }
   
   #clock {
+    font-size: large;
     font-weight: bold;
     color: #4caf50;
     font-family: 'nimbus_monoregular', monospace;
