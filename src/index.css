@@ -222,6 +222,7 @@ body {
     font-weight: bold;
     color: #4caf50;
     font-family: 'nimbus_monoregular', monospace;
+    text-shadow: 0 0 5px #58e88d5f, 0 0 10px #58e88c5f, 0 0 15px #58e88c5f; 
     animation: textShadow 1.6s infinite;
   }
   
