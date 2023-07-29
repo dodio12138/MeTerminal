@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     (function() {
         // 这里放置您想要执行的代码
         addToTerminal(">> Welcome to Levy's Terminal");
+        printTextOneByOne(terminalOutput, 25 ,2);
       })();
     
         // 确保输入框一直获取焦点
@@ -121,6 +122,29 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('clock').textContent = 'TIME: ' + currentTime;
     }
 
+    function printTextOneByOne(element, interval, indexOffset) {
+      const text = element.innerText;
+      element.innerText = '';
+      let index = indexOffset;
+      for(let i = 0;i<indexOffset;i++){
+        element.innerText += text.charAt(i);
+      };
+
+      const timer = setInterval(() => {
+          if (index < text.length) {
+              element.innerText += text.charAt(index);
+              index++;
+          } else {
+              clearInterval(timer);
+          }
+      }, interval);
+  }
+
+  function getLastLineText(element){
+    const linesArray = element.split('\n');
+    const lastLine = linesArray[linesArray.length - 1];
+    return lastLine;
+  }
     setInterval(updateTime, 1000); // 每隔一秒钟调用 updateTime 函数
 
   });
