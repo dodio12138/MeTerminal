@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     terminalInput.addEventListener('keydown', function(event) {
       if (event.key === 'Enter') {
         event.preventDefault();
-        handleCommand(terminalInput.value);
+        handleCommandTest(terminalInput.value);
         terminalInput.value = "";
       }
     });
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     (function() {
         // 这里放置您想要执行的代码
         addToTerminal(">> Welcome to Levy's Terminal");
-        printTextOneByOne(terminalOutput, 25 ,2);
+        printTextOneByOne(terminalOutput, 10 ,2);
       })();
     
         // 确保输入框一直获取焦点
@@ -41,6 +41,31 @@ document.addEventListener('DOMContentLoaded', function() {
         addToTerminal('>> ' + output);
       }
 
+    }
+
+    function handleCommandTest(command){
+      const newPre = document.createElement('div');
+      newPre.classList.add('terminal-output');
+      const output = processCommand(command);
+
+      if (Array.isArray(output)){
+        //const line = output[0];
+        for(let i = 0; i < output.length; i++){
+          //line = output[i];
+          if(i === 0){
+            newPre.textContent += '>> ' + output[i] + '\n';
+          }else{
+            newPre.textContent += '   ' + output[i] + '\n';
+          }
+        }
+        //output.forEach(line => addToTerminal(line));
+      }else if(typeof output === 'string'){
+        newPre.textContent += '>> ' + output + '\n';
+      }
+
+      //terminalOutput.insertBefore(newPre, terminalOutput.nextSibling);
+      terminalOutput.appendChild(newPre);
+      printTextOneByOne(newPre, 10 ,2);
     }
   
     function processCommand(command) {
@@ -109,7 +134,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function cmdClear(){
+        while (terminalOutput.firstChild) {
+          terminalOutput.removeChild(terminalOutput.firstChild);
+        }
         terminalOutput.textContent = '>> Clear Over! Type "help" to see available commands.' + '\n';
+        printTextOneByOne(terminalOutput, 10 ,2);
     }
 
     function updateTime() {

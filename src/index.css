@@ -225,4 +225,11 @@ body {
     text-shadow: 0 0 5px #58e88d5f, 0 0 10px #58e88c5f, 0 0 15px #58e88c5f; 
     animation: textShadow 1.6s infinite;
   }
+
+  .terminal-output{
+    color: #4caf50;
+    font-family: 'nimbus_monoregular', monospace;
+    text-shadow: 0 0 5px #58e88d5f, 0 0 10px #58e88c5f, 0 0 15px #58e88c5f; /* 辉光效果，可以添加多个阴影，逐渐增加模糊程度 */
+    animation: textShadow 1.6s infinite;
+  }
   
