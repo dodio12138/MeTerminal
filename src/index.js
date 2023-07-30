@@ -216,11 +216,15 @@ document.addEventListener('DOMContentLoaded', function() {
     while (terminalOutput.firstChild) {
       terminalOutput.removeChild(terminalOutput.firstChild);
     }
-    terminalOutput.textContent = '>> Shutting down......' + '\n';
-    printTextOneByOne(terminalOutput, 20 ,2);
+    terminalOutput.textContent = '>> Clearing clipboard...' + '\n'
+    + '   Clearing web cache...' + '\n'
+    + '   Resetting the time...' + '\n'
+    + '   Resynchronising the timeline in progress...' + '\n'
+    + '   Disconnecting MeTerminal...' + '\n';
+    printTextOneByOne(terminalOutput, 10 ,2);
     setTimeout(function() {
       window.close(); // 在定时器回调函数中执行关闭操作
-    }, 2000); // 1000毫秒即为1秒
+    }, 4000); // 1000毫秒即为1秒
   }
 
     setInterval(updateTime, 1000); // 每隔一秒钟调用 updateTime 函数
