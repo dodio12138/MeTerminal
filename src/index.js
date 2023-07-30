@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'help':
           return [
             'Available commands:',
-            '[about] [clear] [contact] [help] [interests] [languages] [portfolio] [setting] [skills]',
+            '[about] [clear] [contact] [help] [interests] [languages] [portfolio] [setting] [skills] [shutdown]',
             
           ];
         case 'clear':
@@ -116,6 +116,19 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         case 'portfolio':
             return 'https://dodio12138.github.io'
+        case 'love':
+            return[
+              '┌┈┈┈┈┈┈┈┈┈┈┈┐',
+              '│  __   __  │',
+              '│ /  ╲_/  ╲ │',
+              '│ ╲       / │',
+              '│  ╲     /  │',
+              '│   ╲   /   │',
+              '│    ╲_/    │',
+              '└┈┈┈┈┈┈┈┈┈┈┈┘'
+            ]
+          case 'shutdown':
+              return shutDown();
         default:
           return 'Command not found. Type "help" to see available commands.';
       }
@@ -197,6 +210,19 @@ document.addEventListener('DOMContentLoaded', function() {
       return 'Please type in the correct command format, or type setting for help.';
     };
   }
+
+  function shutDown() {
+    // 使用 setTimeout 设置1秒的等待时间
+    while (terminalOutput.firstChild) {
+      terminalOutput.removeChild(terminalOutput.firstChild);
+    }
+    terminalOutput.textContent = '>> Shutting down......' + '\n';
+    printTextOneByOne(terminalOutput, 20 ,2);
+    setTimeout(function() {
+      window.close(); // 在定时器回调函数中执行关闭操作
+    }, 2000); // 1000毫秒即为1秒
+  }
+
     setInterval(updateTime, 1000); // 每隔一秒钟调用 updateTime 函数
 
   });
