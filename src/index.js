@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const terminalOutput = document.getElementById('terminal-output');
     const terminalInput = document.getElementById('terminal-input');
-  
+
+    let displayInterval = 10;
+
     terminalInput.addEventListener('keydown', function(event) {
       if (event.key === 'Enter') {
         event.preventDefault();
@@ -13,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     (function() {
         // 这里放置您想要执行的代码
         addToTerminal(">> Welcome to Levy's Terminal");
-        printTextOneByOne(terminalOutput, 10 ,2);
+        printTextOneByOne(terminalOutput, displayInterval ,2);
       })();
     
         // 确保输入框一直获取焦点
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const newPre = document.createElement('div');
       newPre.classList.add('terminal-output');
       const output = processCommand(command);
+      //console.log(output);
 
       if (Array.isArray(output)){
         //const line = output[0];
@@ -65,11 +68,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
       //terminalOutput.insertBefore(newPre, terminalOutput.nextSibling);
       terminalOutput.appendChild(newPre);
-      printTextOneByOne(newPre, 10 ,2);
+      printTextOneByOne(newPre, displayInterval, 2);
     }
   
     function processCommand(command) {
       //terminalOutput.textContent += '>>';
+      const cmdt = command.trim().split(' ');
       const args = command.trim().split(' ');
       const cmd = args.shift().toLowerCase();
   
@@ -80,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'help':
           return [
             'Available commands:',
-            '[about] [clear] [contact] [help] [interests] [languages] [portfolio] [skills]',
+            '[about] [clear] [contact] [help] [interests] [languages] [portfolio] [setting] [skills]',
             
           ];
         case 'clear':
@@ -91,22 +95,24 @@ document.addEventListener('DOMContentLoaded', function() {
             return 'dodio12138@gmail.com'
         case 'interests':
             return [
-              '1. Passionate about open source projects, developing some gadgets on my GitHub page, and writing technical documentation.',
-              '2. Pixel art, graphic/3D design and animation enthusiast, now focusing on AI generated art.',
-              '3. Enjoys game development, participated in several GameJams and posted them on my Itch page. Also a gamer.'
+              '- Passionate about open source projects, developing some gadgets on my GitHub page, and writing technical documentation.',
+              '- Pixel art, graphic/3D design and animation enthusiast, now focusing on AI generated art.',
+              '- Enjoys game development, participated in several GameJams and posted them on my Itch page. Also a gamer.'
             ]
         case 'languages':
             return [
-              'English CEFR B2',
-              'Mandarin Native'
+              'English  - CEFR B2',
+              'Mandarin - Native'
             ]
+        case 'setting':
+            return setting(cmdt);
         case 'skills':
             return [
-              'Programming: Python (OpenCV, Matplotlib, Requests, Scrapy, PyTorch. etc.), C#, C/C++, HTML/CSS, JavaScript.',
-              'Softwave: Matlab, Creo, Solidworks, Unity3D, Auto CAD, Keil, Altium Designer.',
-              'Hardware: MCU (8051, STM32), Raspberry Pi, Arduino, PLC (Siemens, Mitsubishi), CNC, 3D Printing.',
-              'Miscellaneous: Linux, Shell (Bash), LATEX(Overleaf), Markdown, Git, Microsoft Office, Blender, AfterEffect, Premiere, DaVinci, Photoshop, Illustrator, QGIS.',
-              'Soft Skills: Time Management, Teamwork, Problem-solving, Documentation'
+              '/Programming/   - Python (OpenCV, Matplotlib, Requests, Scrapy, PyTorch. etc.), C#, C/C++, HTML/CSS, JavaScript.',
+              '/Softwave/      - Matlab, Creo, Solidworks, Unity3D, Auto CAD, Keil, Altium Designer.',
+              '/Hardware/      - MCU (8051, STM32), Raspberry Pi, Arduino, PLC (Siemens, Mitsubishi), CNC, 3D Printing.',
+              '/Miscellaneous/ - Linux, Shell (Bash), LATEX(Overleaf), Markdown, Git, Microsoft Office, Blender, AfterEffect, Premiere, DaVinci, Photoshop, Illustrator, QGIS.',
+              '/Soft Skills/   - Time Management, Teamwork, Problem-solving, Documentation'
             ]
         case 'portfolio':
             return 'https://dodio12138.github.io'
@@ -173,6 +179,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const linesArray = element.split('\n');
     const lastLine = linesArray[linesArray.length - 1];
     return lastLine;
+  }
+
+  function setting(cmd){
+    console.log(cmd);
+    if(cmd.length==1){
+      return [
+        'The format of this command: setting [Subcommand]',
+        '',
+        'Subcomand:',
+        '   interval - Modify the time interval for scrolling characters on the display.'
+      ]
+    }else if((cmd[1] == 'interval')&&(Number(cmd[2])!='NaN')&&(cmd.length==3)){
+      displayInterval = cmd[2];
+      return 'Interval modified.'
+    }else {
+      return 'Please type in the correct command format, or type setting for help.';
+    };
   }
     setInterval(updateTime, 1000); // 每隔一秒钟调用 updateTime 函数
 
