@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let displayInterval = 10;
 
+    const navigatorObject = window.navigator;
+
+    console.log(navigatorObject);
+
     terminalInput.addEventListener('keydown', function(event) {
       if (event.key === 'Enter') {
         event.preventDefault();
@@ -14,8 +18,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     (function() {
         // 这里放置您想要执行的代码
-        addToTerminal(">> Welcome to Levy's Terminal");
-        printTextOneByOne(terminalOutput, displayInterval ,2);
+        //addToTerminal(">> Welcome to Levy's Terminal");
+        addToTerminal(
+          '   ██▓    ▓█████ ██▒   █▓▓██   ██▓               ' + 'Name: LevyOS' + '\n' +
+          '   ▓██▒    ▓█   ▀▓██░   █▒ ▒██  ██▒              ' + 'PixelDepth: ' + screen.pixelDepth + '\n' +
+          '   ▒██░    ▒███   ▓██  █▒░  ▒██ ██░              ' + 'BroswerLanguage: ' + navigatorObject.language + '\n' +
+          '   ▒██░    ▒▓█  ▄  ▒██ █░░  ░ ▐██▓░              ' + 'Cookie: ' + navigatorObject.cookieEnabled + '\n' +
+          '   ░██████▒░▒████▒  ▒▀█░    ░ ██▒▓░              ' + 'Online: ' + navigatorObject.onLine + '\n' +
+          '   ░ ▒░▓  ░░░ ▒░ ░  ░ ▐░     ██▒▒▒               ' + 'CPUCore: ' + navigatorObject.hardwareConcurrency + '\n' +
+          '   ░ ░ ▒  ░ ░ ░  ░  ░ ░░   ▓██ ░▒░               ' + 'CodeName: ' + navigatorObject.appCodeName + '\n' +
+          '     ░ ░      ░       ░░   ▒ ▒ ░░                ' + 'Product: ' + navigatorObject.product + '\n' +
+          '       ░  ░   ░  ░     ░   ░ ░                   ' + 'ProductSub: ' + navigatorObject.productSub+ '\n' +
+          '                      ░    ░ ░                   ' + 'Vender: ' + navigatorObject.vendor + '\n' +
+          '     ' + '\n' +
+          '                         [-Welcome to Levy-Terminal!-]' + '\n' +
+          '                          Copyright 2023 by LevyZhang'
+        )
+        printTextOneByOne(terminalOutput, 0.5 ,2);
       })();
     
         // 确保输入框一直获取焦点

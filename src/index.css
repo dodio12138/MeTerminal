@@ -75,8 +75,6 @@ body {
   #terminal-input{
     background-color: transparent;
     font-size: large;
-    border: none; /* 隐藏边框 */
-    outline: none;
     color: #4caf50;
     flex: 1;
     /* 隐藏输入框的外边框（包括获取焦点时的边框） */
