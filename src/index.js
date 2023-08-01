@@ -1,3 +1,5 @@
+//TODO: fisheye effect
+
 document.addEventListener('DOMContentLoaded', function() {
     const terminalOutput = document.getElementById('terminal-output');
     const terminalInput = document.getElementById('terminal-input');
@@ -6,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const navigatorObject = window.navigator;
 
-    console.log(navigatorObject);
+    //console.log(navigatorObject);
 
     terminalInput.addEventListener('keydown', function(event) {
       if (event.key === 'Enter') {
