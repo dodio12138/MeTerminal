@@ -1,0 +1,28 @@
+body{
+    margin: 0px;
+}
+
+.background{
+    background-color: rgb(228, 227, 223);
+    position: relative;
+    perspective: 2000px;
+    perspective-origin: bottom;
+}
+
+.computer{
+    width: 100%;
+    height: 100%;
+
+}
+
+.cmd{
+    position: absolute;
+    top: -5%;
+    left: 15%;
+    width: 80%;
+    height: 80%;
+    z-index: 1; /* 设置一个较高的z-index，确保iframe在图片之上显示 */
+    overflow: hidden;
+    transform: skew(0deg, 337deg) scale(0.23);
+    border-radius: 5%;
+}
