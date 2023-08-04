@@ -40,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
       })();
     
         // 确保输入框一直获取焦点
-    setInterval(function() {
-        if (document.activeElement !== terminalInput) {
-            terminalInput.focus();
-        }
-    }, 100);
+    // setInterval(function() {
+    //     if (document.activeElement !== terminalInput) {
+    //         terminalInput.focus();
+    //     }
+    // }, 1000);
   
     function handleCommand(command) {
       //addToTerminal('\n>> ' + command + ":");
