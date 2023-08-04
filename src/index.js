@@ -148,6 +148,30 @@ document.addEventListener('DOMContentLoaded', function() {
               '│    ╲_/    │',
               '└┈┈┈┈┈┈┈┈┈┈┈┘'
             ]
+          case 'apple':
+            return[
+              '╭┈┈┈┈┈┈┈╮',
+              '│ .   . │',
+              '│   |   │',
+              '│   V   │',
+              '└┈┈┈┈┈┈┈╯'
+            ]
+          case 'smile':
+            return[
+              ' ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■  ',
+              '■                           ■',
+              '■                           ■',
+              '■      ▌      ▮      ▌     ■',
+              '■             ▮            ■',
+              '■             ▮            ■',
+              '■            ■■             ■',
+              '■                           ■',
+              '■        ▚▄▄▄▄▄▄▄▄▄▞       ■',
+              '■                           ■',
+              '■                           ■',
+              '■                           ■',
+              ' ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■  ',
+            ]
           case 'shutdown':
               return shutDown();
         default:
