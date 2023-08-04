@@ -12,10 +12,10 @@ body, html{
     position: relative;
     width: 800px;
     height: 600px;
-    background: rgb(227, 227, 227);
+    background: linear-gradient(225deg, rgb(227, 227, 227), rgb(205, 205, 205));;
     border-radius: 5%;
-    box-shadow: 5px -5px 0px 0px rgb(44, 44, 44);
-    border: 5px rgb(44, 44, 44) solid;
+    box-shadow: 0px 7px 7px 0px rgb(88, 88, 88);
+    border: 5px rgb(68, 68, 68) solid;
   }
   
   .top-c {
@@ -26,9 +26,9 @@ body, html{
     position: relative;
     border-radius: 5%;
     background: rgb(164, 164, 164);
-    box-shadow: inset 20px 20px 35px #c7c7c7,
-              inset -20px -20px 35px #ffffff;
-    border: 2px #000000 solid;
+    box-shadow: inset -20px 20px 35px #c7c7c7,
+              inset 20px -20px 35px #ffffff;
+    border: 3px #f0f0f0 solid;
   }
   
   .top-s {
@@ -55,4 +55,65 @@ body, html{
     transform: scale(0.5);
     border-radius: 3%;
     font-size: 30px; /* 设置字体大小为16像素，你可以根据需要更改此值 */
+  }
+
+  .bottom-c{
+    width: 90%;
+    height: 20%;
+    position: relative;
+  }
+
+  .logo{
+    position: absolute;
+    width: 4%;
+    height: 20%;
+    top: 40%;
+    left: 10%;
+    padding: 10px;
+    border: rgb(212, 212, 212) 3px solid;
+    border-radius: 10%;
+    box-shadow: inset -1px 1px 5px #969696,
+            inset 1px -1px 5px rgb(212, 212, 212);
+  }
+
+  .logo-item{
+    width: 5px;
+    height: 100%;
+    display: inline-block;
+    margin-right: -7.5px;
+    border-radius: 0px;
+  }
+
+  .port-t{
+    position: absolute;
+    width: 10%;
+    height:15%;
+    top: 40%;
+    left: 90%;
+    background-color: rgb(212, 212, 212);
+    border-radius: 4px 4px 0px 0px;
+    box-shadow: inset -1px 1px 5px #969696,
+                inset 1px -1px 5px rgb(212, 212, 212);
+  }
+
+  .disk-port{
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    top: 55%;
+    left: 60%;
+    background-color: #000000;
+    border-radius: 4px 0px 0px 4px;
+  }
+
+  .port-b{
+    position: absolute;
+    width: 10%;
+    height: 15%;
+    top: 60%;
+    left: 90%;
+    background-color: #000000;
+    border-radius: 4px;
+    box-shadow: inset -3px -3px 24px #000000,
+                inset 3px 3px 24px #464646;
   }
