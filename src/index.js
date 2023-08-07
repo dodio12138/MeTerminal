@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
               '/Programming/   - Python (OpenCV, Matplotlib, Requests, Scrapy, PyTorch. etc.), C#, C/C++, HTML/CSS, JavaScript.',
               '/Softwave/      - Matlab, Creo, Solidworks, Unity3D, Auto CAD, Keil, Altium Designer.',
               '/Hardware/      - MCU (8051, STM32), Raspberry Pi, Arduino, PLC (Siemens, Mitsubishi), CNC, 3D Printing.',
-              '/Miscellaneous/ - Linux, Shell (Bash), LATEX(Overleaf), Markdown, Git, Microsoft Office, Blender, AfterEffect, Premiere, DaVinci, Photoshop, Illustrator, QGIS.',
+              '/Miscellaneous/ - Linux, Shell (Bash), LATEX, Markdown, Git, Blender, AfterEffect, Premiere, DaVinci, Photoshop, Illustrator, QGIS.',
               '/Soft Skills/   - Time Management, Teamwork, Problem-solving, Documentation'
             ]
         case 'portfolio':
