@@ -111,14 +111,16 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'clear':
             return cmdClear();
         case 'about':
-            return 'My name is Levy Zhang, and I am a game developer and studying Robotics in QMUL.';
+            return 'My name is Levy Zhang, and I am a full-stack developer and studying Robotics in QMUL.';
         case 'contact':
-            return 'dodio12138@gmail.com'
+            return 'Email: dodio12138@gmail.com'
         case 'interests':
             return [
               '- Passionate about open source projects, developing some gadgets on my GitHub page, and writing technical documentation.',
               '- Pixel art, graphic/3D design and animation enthusiast, now focusing on AI generated art.',
-              '- Enjoys game development, participated in several GameJams and posted them on my Itch page. Also a gamer.'
+              '- Enjoys game development, participated in several GameJams and posted them on my Itch page. Also a gamer.',
+              '- Working on applying reinforcement learning to robot motion control and path planning.',
+              '- Focused on heuristic algorithms, genetic and evolutionary algorithms, embodied intelligence and generative AI.'
             ]
         case 'languages':
             return [
@@ -129,10 +131,10 @@ document.addEventListener('DOMContentLoaded', function() {
             return setting(cmdt);
         case 'skills':
             return [
-              '/Programming/   - Python (OpenCV, Matplotlib, Requests, Scrapy, PyTorch. etc.), C#, C/C++, HTML/CSS, JavaScript.',
-              '/Softwave/      - Matlab, Creo, Solidworks, Unity3D, Auto CAD, Keil, Altium Designer.',
-              '/Hardware/      - MCU (8051, STM32), Raspberry Pi, Arduino, PLC (Siemens, Mitsubishi), CNC, 3D Printing.',
-              '/Miscellaneous/ - Linux, Shell (Bash), LATEX, Markdown, Git, Blender, AfterEffect, Premiere, DaVinci, Photoshop, Illustrator, QGIS.',
+              '/Programming/   - Python (OpenCV, Scrapy, PyTorch..), C# (Unity, WPF), C/C++ (Boost, Qt, OpenCV), HTML/CSS, JavaScript(three, anime, D3)...',
+              '/Softwave/      - Matlab, Creo, Solidworks, Altium Designer, KiCad, Webots...',
+              '/Hardware/      - MCU, Raspberry Pi, Arduino, PLC (Siemens, Mitsubishi), CNC, 3D Printing...',
+              '/Miscellaneous/ - Linux, Shell (Bash), LATEX, Markdown, Git, Blender, AfterEffect, Premiere, DaVinci, Photoshop, Illustrator, QGIS...',
               '/Soft Skills/   - Time Management, Teamwork, Problem-solving, Documentation'
             ]
         case 'portfolio':
