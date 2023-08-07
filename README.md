@@ -8,7 +8,7 @@
 
  ## ✨ Features
 - It uses native css and js, no third party libraries or frameworks are used.
-- Pure css drawing of a faux mackintosh graphic
+- Pure css drawing of a faux mackintosh graphic.
 - Implement terminal printing, character scrolling playback and retro and CRT effects.
 
  ## 🔧 Functions
