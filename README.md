@@ -3,7 +3,8 @@
  ---
 
  ## 📢 Introduction
-  This is a terminal that uses a webpage to simulate and now it is used to display my resume.
+   - This is a terminal that uses a webpage to simulate and now it is used to display my resume.
+   - You can visit [it](https://dodio12138.github.io/MeTerminal/src/MePC.html) here.
  
 
  ## ✨ Features
