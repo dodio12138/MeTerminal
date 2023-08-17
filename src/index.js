@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
               ' ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■  ',
             ]
           case 'bilibili':
-            return getBilibilFans();
+            return getBilibilFans(12027943);
           case 'shutdown':
             return shutDown();
         default:
@@ -274,6 +274,16 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
       window.close(); // 在定时器回调函数中执行关闭操作
     }, 4000); // 1000毫秒即为1秒
+  }
+
+  function getBilibilFans(userId){
+    fetch(`https://api.bilibili.com/x/relation/stat?vmid=${userId}`)
+      .then(response => response.json())
+      .then(data => {
+        return data.data.follower;
+  })
+      .catch(error => {
+  });
   }
 
     setInterval(updateTime, 1000); // 每隔一秒钟调用 updateTime 函数
