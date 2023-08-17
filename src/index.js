@@ -174,8 +174,10 @@ document.addEventListener('DOMContentLoaded', function() {
               '■                           ■',
               ' ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■  ',
             ]
+          case 'bilibili':
+            return getBilibilFans();
           case 'shutdown':
-              return shutDown();
+            return shutDown();
         default:
           return 'Command not found. Type "help" to see available commands.';
       }
@@ -275,6 +277,5 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
     setInterval(updateTime, 1000); // 每隔一秒钟调用 updateTime 函数
-
   });
   
