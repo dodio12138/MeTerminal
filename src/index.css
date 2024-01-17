@@ -8,13 +8,14 @@
 }
 
 
-body {
+.ter {
     background-color: #2a372f;
     color: #fff;
     font-family: 'nimbus_monoregular', monospace;
     margin: 0;
     padding: 0;
     font-size: large;
+    user-select: none;
   }
   
   .terminal-container {

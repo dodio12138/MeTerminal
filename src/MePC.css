@@ -1,146 +1,223 @@
-body, html{
-    margin: 0px;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    grid-column-gap: 10px;
-    grid-row-gap: 0px;
-    justify-content: center;
-    align-content: center;
-    align-items: end;
-    background-color: #e8e8e8;
+@font-face {
+  font-family: 'nimbus_monoregular';
+  src: url('../font/nimbusmono-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body,
+html {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  justify-content: center;
+  align-content: center;
+  align-items: end;
+  background-color: #e8e8e8;
 }
 
 .computer {
-    position: relative;
-    grid-area: 1 / 1 / 4 / 2;
-    width: 800px;
-    height: 600px;
-    background: linear-gradient(225deg, rgb(227, 227, 227), rgb(205, 205, 205));;
-    border-radius: 5%;
-    box-shadow: 0px 7px 7px 0px rgb(88, 88, 88);
-    border: 5px rgb(68, 68, 68) solid;
-  }
-  
-  .printer{
-    position: relative;
-    grid-area: 1 / 2 / 2 / 3; 
-    width: 500px;
-    height: 200px;
-    background: linear-gradient(225deg, rgb(227, 227, 227), rgb(205, 205, 205));;
-    border-radius: 25px;
-    box-shadow: 0px 7px 7px 0px rgb(88, 88, 88);
-    border: 5px rgb(68, 68, 68) solid;
-  }
+  position: relative;
+  grid-area: 1 / 1 / 4 / 2;
+  width: 800px;
+  height: 600px;
+  background: linear-gradient(225deg, rgb(227, 227, 227), rgb(205, 205, 205));
+  ;
+  border-radius: 5%;
+  box-shadow: 0px 7px 7px 0px rgb(88, 88, 88);
+  border: 5px rgb(68, 68, 68) solid;
+}
 
-  .mainPC{
-    position: relative;
-    grid-area: 2 / 2 / 4 / 3;
-    width: 500px;
-    height: 400px;
-    background: linear-gradient(225deg, rgb(227, 227, 227), rgb(205, 205, 205));;
-    border-radius: 25px;
-    box-shadow: 0px 7px 7px 0px rgb(88, 88, 88);
-    border: 5px rgb(68, 68, 68) solid;
-  }
+.printer {
+  position: relative;
+  grid-area: 1 / 2 / 2 / 3;
+  width: 500px;
+  height: 200px;
+  background: linear-gradient(225deg, rgb(227, 227, 227), rgb(205, 205, 205));
+  ;
+  border-radius: 25px;
+  box-shadow: 0px 7px 7px 0px rgb(88, 88, 88);
+  border: 5px rgb(68, 68, 68) solid;
+}
 
-  .top-c {
-    width: 90%;
-    height: 80%;
-    right: -5%;
-    top: 5%;
-    position: relative;
-    border-radius: 5%;
-    background: rgb(164, 164, 164);
-    box-shadow: inset -20px 20px 35px #c7c7c7,
-              inset 20px -20px 35px #ffffff;
-    border: 3px #f0f0f0 solid;
-  }
-  
-  .top-s {
-    position: relative;
-    width: 92%;
-    height: 90%;
-    right: -3.5%;
-    top: 5%;
-    
-    border-radius: 5%;
-    background: rgb(227, 227, 227);
-    background: linear-gradient(145deg, #f0f0f0, #cacaca);
-    box-shadow: 0 0 -1000px 10px rgb(74, 255, 74);
-    border: #000000 3px solid;
-    overflow: hidden;
-    
-  }
-  .cmd{
-    position: absolute;
-    width: 250%;
-    height: 250%;
-    left: -5%;
-    transform-origin: 0 0; 
-    transform: scale(0.5);
-    border-radius: 3%;
-    font-size: 30px; /* 设置字体大小为16像素，你可以根据需要更改此值 */
-  }
+.outside {
+  width: 90%;
+  height: 30%;
+  right: -5%;
+  top: 5%;
+  position: relative;
+  border-radius: 15px;
+  background: rgb(164, 164, 164);
+  box-shadow: inset -20px 20px 35px #c7c7c7,
+    inset 20px -20px 35px #ffffff;
+  border: 3px #f0f0f0 solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .bottom-c{
-    width: 90%;
-    height: 20%;
-    position: relative;
-  }
+.paperouter {
+  width: 95%;
+  height: 60%;
+  background-color: #000000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
-  .logo{
-    position: absolute;
-    width: 4%;
-    height: 20%;
-    top: 40%;
-    left: 10%;
-    padding: 10px;
-    border: rgb(212, 212, 212) 3px solid;
-    border-radius: 10%;
-    box-shadow: inset -1px 1px 5px #969696,
-            inset 1px -1px 5px rgb(212, 212, 212);
-  }
+.paper {
+  width: 90%;
+  height: 35px;
+  position: relative;
+  background: linear-gradient(to bottom, #000000 0%, whitesmoke 20px);
+  top: 10px;
+  border: 2px rgb(68, 68, 68) solid;
+  border-top: 0px;
+  border-radius: 5px;
+  z-index: 5;
+  transition: height 0.5s cubic-bezier(0.68, 0.02, 0.77, 1.43);
+}
 
-  .logo-item{
-    width: 5px;
-    height: 100%;
-    display: inline-block;
-    margin-right: -7.5px;
-    border-radius: 0px;
-  }
+.paper p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+  transform: rotateX(5.8rad);
+  font-family: 'nimbus_monoregular', monospace;
+  user-select: none;
+}
 
-  .port-t{
-    position: absolute;
-    width: 10%;
-    height:15%;
-    top: 40%;
-    left: 90%;
-    background-color: rgb(212, 212, 212);
-    border-radius: 4px 4px 0px 0px;
-    box-shadow: inset -1px 1px 5px #969696,
-                inset 1px -1px 5px rgb(212, 212, 212);
-  }
+.printhead {
+  width: 30px;
+  height: 20px;
+  background-color: #464646;
+  position: absolute;
+  left: 5%;
+  z-index: 6;
+  background: linear-gradient(to bottom, #000000 0%, rgb(57, 57, 57) 20px);
+  box-shadow: 2px 3px 2px 0px rgb(22 22 22);
+}
 
-  .disk-port{
-    position: absolute;
-    width: 40%;
-    height: 10%;
-    top: 55%;
-    left: 60%;
-    background-color: #000000;
-    border-radius: 4px 0px 0px 4px;
-  }
+.mainPC {
+  position: relative;
+  grid-area: 2 / 2 / 4 / 3;
+  width: 500px;
+  height: 400px;
+  background: linear-gradient(225deg, rgb(227, 227, 227), rgb(205, 205, 205));
+  ;
+  border-radius: 25px;
+  box-shadow: 0px 7px 7px 0px rgb(88, 88, 88);
+  border: 5px rgb(68, 68, 68) solid;
+}
 
-  .port-b{
-    position: absolute;
-    width: 10%;
-    height: 15%;
-    top: 60%;
-    left: 90%;
-    background-color: #000000;
-    border-radius: 4px;
-    box-shadow: inset -3px -3px 24px #000000,
-                inset 3px 3px 24px #464646;
-  }
+.top-c {
+  width: 90%;
+  height: 80%;
+  right: -5%;
+  top: 5%;
+  position: relative;
+  border-radius: 5%;
+  background: rgb(164, 164, 164);
+  box-shadow: inset -20px 20px 35px #c7c7c7,
+    inset 20px -20px 35px #ffffff;
+  border: 3px #f0f0f0 solid;
+}
+
+.top-s {
+  position: relative;
+  width: 92%;
+  height: 90%;
+  right: -3.5%;
+  top: 5%;
+
+  border-radius: 5%;
+  background: rgb(227, 227, 227);
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow: 0 0 -1000px 10px rgb(74, 255, 74);
+  border: #000000 3px solid;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.cmd {
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  left: -5%;
+  transform-origin: 0 0;
+  transform: scale(0.5);
+  border-radius: 3%;
+  font-size: 30px;
+  /* 设置字体大小为16像素，你可以根据需要更改此值 */
+}
+
+.bottom-c {
+  width: 90%;
+  height: 20%;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  width: 4%;
+  height: 20%;
+  top: 40%;
+  left: 10%;
+  padding: 10px;
+  border: rgb(212, 212, 212) 3px solid;
+  border-radius: 10%;
+  box-shadow: inset -1px 1px 5px #969696,
+    inset 1px -1px 5px rgb(212, 212, 212);
+}
+
+.logo-item {
+  width: 5px;
+  height: 100%;
+  display: inline-block;
+  margin-right: -7.5px;
+  border-radius: 0px;
+}
+
+.port-t {
+  position: absolute;
+  width: 10%;
+  height: 15%;
+  top: 40%;
+  left: 90%;
+  background-color: rgb(212, 212, 212);
+  border-radius: 4px 4px 0px 0px;
+  box-shadow: inset -1px 1px 5px #969696,
+    inset 1px -1px 5px rgb(212, 212, 212);
+}
+
+.disk-port {
+  position: absolute;
+  width: 40%;
+  height: 10%;
+  top: 55%;
+  left: 60%;
+  background-color: #000000;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.port-b {
+  position: absolute;
+  width: 10%;
+  height: 15%;
+  top: 60%;
+  left: 90%;
+  background-color: #000000;
+  border-radius: 4px;
+  box-shadow: inset -3px -3px 24px #000000,
+    inset 3px 3px 24px #464646;
+}

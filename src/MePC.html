@@ -8,40 +8,61 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MePC</title>
-    <link rel="stylesheet" href="./MePC.css">
-</head>
-<body>
-    <div class="computer">
-        <div class="top-c">
-          <div class="top-s">
-            <iframe src="./index.html" class="cmd" style="border:none;"></iframe>
-          </div>
-        </div>
-        <div class="bottom-c">
-          <div class="logo">
-            <div class="logo-item" style="background-color: #50A2CB;"></div>
-            <div class="logo-item" style="background-color: #B759A4;"></div>
-            <div class="logo-item" style="background-color: #E76B72;"></div>
-            <div class="logo-item" style="background-color: #F9B862;"></div>
-            <div class="logo-item" style="background-color: #F6CD58;"></div>
-            <div class="logo-item" style="background-color: #9DCB6E;"></div>
-          </div>
-          <div class="port-t"></div>
-          <div class="disk-port"></div>
-          <div class="port-b"></div>
-        </div>
-    </div>
-    <div class="printer">
-      <div class="outside">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MePC</title>
+  <link rel="stylesheet" href="./MePC.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="computer">
+    <div class="top-c">
+      <div class="top-s">
+        <div class="cmd ter" style="border:none;">
+          <div class="terminal-container">
+            <a id="clock">Synchronising time...</a>
+            <br>
+            <a class="terminal-output" width="100%"
+              SIZE=3>========================================================================</a>
+            <pre id="terminal-output"></pre>
+            <div class="input-container">
+              <span>>></span>
+              <input type="text" id="terminal-input" autocomplete="off">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="mainPC">
-      
+    <div class="bottom-c">
+      <div class="logo">
+        <div class="logo-item" style="background-color: #50A2CB;"></div>
+        <div class="logo-item" style="background-color: #B759A4;"></div>
+        <div class="logo-item" style="background-color: #E76B72;"></div>
+        <div class="logo-item" style="background-color: #F9B862;"></div>
+        <div class="logo-item" style="background-color: #F6CD58;"></div>
+        <div class="logo-item" style="background-color: #9DCB6E;"></div>
+      </div>
+      <div class="port-t"></div>
+      <div class="disk-port"></div>
+      <div class="port-b"></div>
     </div>
+  </div>
+  <div class="printer">
+    <div class="outside">
+      <div class="paperouter">
+        <div class="paper">
+          <p>Levy™</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainPC">
+  </div>
+  <script src="./printer.js"></script>
+  <script src="./index.js"></script>
 </body>
+
 </html>
