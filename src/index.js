@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
       '                      ░    ░ ░                   ' + 'Vender: ' + navigatorObject.vendor + '\n' +
       '     ' + '\n' +
       '                         [-Welcome to Levy-Terminal!-]' + '\n' +
-      '                          Copyright 2023 by LevyZhang'
+      '                          Copyright © 2024 by LevyZhang' + '\n' +
+      '                                                                                      '
     )
     printTextOneByOne(terminalOutput, 0.5, 2);
   })();
@@ -112,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'help':
         return [
           'Available commands:',
-          '[about] [clear] [contact] [help] [interests] [languages] [portfolio] [setting] [skills] [shutdown]',
+          wrapText('[about] [clear] [contact] [help] [interests] [languages] [portfolio] [print] [setting] [skills] [shutdown]'),
 
         ];
       case 'clear':
@@ -123,11 +124,11 @@ document.addEventListener('DOMContentLoaded', function () {
         return 'Email: dodio12138@gmail.com'
       case 'interests':
         return [
-          '- Passionate about open source projects, developing some gadgets on my GitHub page, and writing technical documentation.',
-          '- Pixel art, graphic/3D design and animation enthusiast, now focusing on AI generated art.',
-          '- Enjoys game development, participated in several GameJams and posted them on my Itch page. Also a gamer.',
-          '- Working on applying reinforcement learning to robot motion control and path planning.',
-          '- Focused on heuristic algorithms, genetic and evolutionary algorithms, embodied intelligence and generative AI.'
+          wrapText('- Passionate about open source projects, developing some gadgets on my GitHub page, and writing technical documentation.'),
+          wrapText('- Pixel art, graphic/3D design and animation enthusiast, now focusing on AI generated art.'),
+          wrapText('- Enjoys game development, participated in several GameJams and posted them on my Itch page. Also a gamer.'),
+          wrapText('- Working on applying reinforcement learning to robot motion control and path planning.'),
+          wrapText('- Focused on heuristic algorithms, genetic and evolutionary algorithms, embodied intelligence and generative AI.')
         ]
       case 'languages':
         return [
@@ -138,11 +139,11 @@ document.addEventListener('DOMContentLoaded', function () {
         return setting(cmdt);
       case 'skills':
         return [
-          '/Programming/   - Python (OpenCV, Scrapy, PyTorch..), C# (Unity, WPF), C/C++ (Boost, Qt, OpenCV), HTML/CSS, JavaScript(three, anime, D3)...',
-          '/Softwave/      - Matlab, Creo, Solidworks, Altium Designer, KiCad, Webots...',
-          '/Hardware/      - MCU, Raspberry Pi, Arduino, PLC (Siemens, Mitsubishi), CNC, 3D Printing...',
-          '/Miscellaneous/ - Linux, Shell (Bash), LATEX, Markdown, Git, Blender, AfterEffect, Premiere, DaVinci, Photoshop, Illustrator, QGIS...',
-          '/Soft Skills/   - Time Management, Teamwork, Problem-solving, Documentation'
+          wrapText('/Programming/   - Python (OpenCV, PyTorch, Gymnasium..), C# (Unity, WPF), C/C++ (Boost, Qt, OpenCV), HTML/CSS, JavaScript(three.js, anime.js, D3.js)...'),
+          wrapText('/Softwave/      - Matlab, Creo, Solidworks, Altium Designer, KiCad, Webots...'),
+          wrapText('/Hardware/      - MCU, Raspberry Pi, Arduino, PLC (Siemens, Mitsubishi), CNC, 3D Printing...'),
+          wrapText('/Miscellaneous/ - Linux, Shell (Bash), LATEX, Markdown, Git, Blender, AfterEffect, Premiere, DaVinci, Photoshop, Illustrator, QGIS...'),
+          wrapText('/Soft Skills/   - Time Management, Teamwork, Problem-solving, Documentation...')
         ]
       case 'portfolio':
         return 'https://dodio12138.github.io'
@@ -255,11 +256,15 @@ document.addEventListener('DOMContentLoaded', function () {
         'The format of this command: setting [Subcommand]',
         '',
         'Subcomand:',
-        '   interval - Modify the time interval for scrolling characters on the display.'
+        '   interval - Modify the time interval for scrolling characters on the display.',
+        '   offnoise - Remove the noise display from the screen.'
       ]
     } else if ((cmd[1] == 'interval') && (Number(cmd[2]) != 'NaN') && (cmd.length == 3)) {
       displayInterval = cmd[2];
       return 'Interval modified.'
+    } else if ((cmd[1] == 'offnoise') && (cmd.length == 2)) {
+      offnoise();
+      return 'noise is removed!';
     } else {
       return 'Please type in the correct command format, or type setting for help.';
     };
@@ -281,6 +286,48 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 4000); // 1000毫秒即为1秒
   }
 
-  setInterval(updateTime, 1000); // 每隔一秒钟调用 updateTime 函数
+  function offnoise() {
+    const noise = document.getElementById('monitor-videos');
+    if (noise.style.display != 'none') {
+      noise.style.display = 'none';
+    }
+  }
+
+  function wrapText(text) {
+    const maxLineLength = 130;
+    const indent = '   '; // 三个空格的缩进
+    const lines = text.split('\n');
+
+    const wrappedLines = lines.map(line => {
+      if (line.length > maxLineLength) {
+        const wrappedLine = [];
+        let currentLine = '';
+
+        for (let i = 0; i < line.length; i++) {
+          currentLine += line[i];
+
+          if (currentLine.length === maxLineLength) {
+            wrappedLine.push(currentLine);
+            currentLine = '';
+          }
+        }
+
+        if (currentLine.length > 0) {
+          wrappedLine.push(currentLine);
+        }
+
+        return wrappedLine.map(wrapped => indent + wrapped).join('\n');
+      } else {
+        return indent + line;
+      }
+    });
+
+    const resultText = wrappedLines.join('\n');
+
+    // 在最后输出时开头减去3个字符
+    return resultText.substring(indent.length);
+  }
+
+  setInterval(updateTime, 100); // 每隔一秒钟调用 updateTime 函数
 
 });
