@@ -106,10 +106,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
       case 'print':
         // printheadAni(args.join(' ').length);
-        const paper = paperAni();
-        const pretext = paper.childNodes[1];
-        pretext.innerText = args.join(' ') + '\n' + pretext.innerText;
-        return args.join(' ');
+        if(typeof paperAni === 'function'){
+          const paper = paperAni();
+          const pretext = paper.childNodes[1];
+          pretext.innerText = args.join(' ') + '\n' + pretext.innerText;
+          return args.join(' ');
+        }
+        else{
+          return 'Printer not found!';
+        }
       case 'help':
         return [
           'Available commands:',
