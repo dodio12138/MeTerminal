@@ -13,6 +13,7 @@ let paperHeight = 35;
 function paperAni() {
     paperHeight += 20;
     paper.style.height = paperHeight + 'px';
+    playSound(printsoundFile,0)
     return paper;
 }
 
