@@ -16,7 +16,26 @@ body {
     padding: 0;
     font-size: large;
   }
-  
+
+  video {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: lighten;;
+}
+ 
+#monitor-videos {
+    pointer-events: none;
+    position: absolute;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
   .terminal-container {
     /* 样式同之前的示例 */
     margin-top: 5%;
