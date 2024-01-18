@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const navigatorObject = window.navigator;
 
+  //单独窗口去遮罩
+  if(typeof paperAni === 'function'){
+
+  }else{
+    offnoise();
+  }
+
   //console.log(navigatorObject);
 
   terminalInput.addEventListener('keydown', function (event) {
