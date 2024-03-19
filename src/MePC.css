@@ -117,6 +117,19 @@ html {
   border: 5px rgb(68, 68, 68) solid;
 }
 
+.pcBack {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 480px;
+  height: 380px;
+  border-radius: 20px;
+  background-color: #d2d2d2;
+  border: #f0f0f0 solid 2px;
+  box-shadow: inset 3px 3px 2px #b5b5b5,
+            inset -3px -3px 2px #b5b5b5;
+}
+
 .top-c {
   width: 90%;
   height: 80%;
